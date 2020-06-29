@@ -7,15 +7,15 @@ export default function manageTodo(state = {
 
 
 
-  const todo = {
-        id: Math.random()*10000000000000000,
+      const todo = {
+        id: uuid(),
         text: action.payload.text
       }
       return { todos: state.todos.concat(todo) };
-
+ 
     case 'DELETE_TODO':
-
-      return {todos: state.todos.filter(todo => todo.id !== action.payload)};
+ 
+      return {todos: state.todos.filter(todo => todo !== action.payload)}
       
       
       
